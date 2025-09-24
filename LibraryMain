@@ -1,0 +1,56 @@
+package liabrarymanagement;
+
+import java.util.Scanner;
+
+public class LibraryMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Library library = new Library();
+		Scanner scanner = new Scanner(System.in);
+		int choice;
+		System.out.println("####Welcome to Library management###");
+		 do {
+			 System.out.println("1.Add Book");
+			 System.out.println("2.Issue Book");
+			 System.out.println("3.Return Book");
+			 System.out.println("4.Search Book");
+			 System.out.println("5.Dispay All Books");
+			 System.out.println("6.Exit");
+			 System.out.println("Enter your choice:");
+			 while(!scanner.hasNextShort()) {
+				 System.out.println("Invalid input.Enter a number.");
+				 scanner.next();
+			 }
+			 choice = scanner.nextInt();
+			 scanner.nextLine();
+			 
+			 switch(choice) {
+			 case 1:
+				 library.addBook();
+				 break;
+			 case 2:
+				 library.issueBook();
+				 break;
+			 case 3:
+				 library.returnBook();
+				 break;
+			 case 4:
+				 library.searchBook();
+				 break;
+			 case 5:
+				 library.displayBook();
+				 break;
+			 case 6:
+				 System.out.println("Thank you for using LMS.Goodbye!");
+				 break;
+				 default:
+					 System.out.println("Invalid choice.Try again.");
+				 
+			 }
+		 }while (choice !=6);
+		 scanner.close();
+
+	}
+
+}
