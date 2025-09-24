@@ -1,0 +1,50 @@
+package liabrarymanagement;
+
+public class Book {
+	private String title;
+	private String author;
+	private boolean isIssued;
+	
+	//constructor
+	public Book(String title, String author) {
+		
+		this.title = title;
+		this.author = author;
+		this.isIssued = false;
+	}
+	
+	public String getTitle() {
+		return title;
+	}
+	public String getAuthor() {
+		return author;
+	}
+	public boolean isIssued() {
+		return isIssued;
+	}
+
+	public void issue() {
+		if(!isIssued) {
+			isIssued = true;
+			System.out.println("Book issued successfully.");
+		}else {
+			System.out.println("Book is already issued.");
+		}
+	}
+	
+	public void returnBook() {
+		if(isIssued) {
+			isIssued =  false;
+			System.out.println("Book returned successfully.");
+		}else {
+			System.out.println("Book was not issued");
+		}
+	}
+
+	@Override
+	public String toString() {
+		return "Book [title=" + title + ", author=" + author + ", isIssued=" + isIssued + "]";
+	}
+	
+	
+}
